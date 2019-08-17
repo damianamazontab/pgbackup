@@ -6,17 +6,16 @@ with open('README.md', 'r') as f:
 setup(
     name='pgbackup',
     version='0.1.0',
-    author='Keith Thomson',
-    description = 'A utility for backing up PostgreSQL databases.',
+    description='Database backups locally or to AWS S3.',
     long_description=long_description,
-    long_description_content_type='text/markdown',
-    url='https://github.com/linuxacademy/pgbackup',
-    packages=find_packages('src')
-    package_dir={'': 'src'},
+    author='Keith',
+    author_email='keith@linuxacademy.com',
     install_requires=['boto3'],
+    packages=find_packages('src'),
+    package_dir={'': 'src'},
     entry_points={
         'console_scripts': [
             'pgbackup=pgbackup.cli:main',
-        ],
+        ]
     }
 )
